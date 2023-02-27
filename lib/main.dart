@@ -14,14 +14,7 @@ void main() {
             if (Platform.isAndroid) {
               urlString = 'https://play.google.com/store/apps/details?id=com.ummahshop.app';
             } else if (Platform.isIOS) {
-              final info = await DeviceInfoPlugin().iosInfo.then((IosDeviceInfo info) => info.systemVersion);
-              final version = int.tryParse(!info.contains('.') ? info : info.split('.').first);
-              if (version >= 11) {
-                urlString = 'itms-apps://itunes.apple.com/xy/app/foo/id%@1614235293';
-              } else {
-                urlString = 'itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@1614235293';
-              }
-              // urlString = 'https://play.google.com/store/apps/details?id=com.ummahshop.app';
+              urlString = 'https://apps.apple.com/app/id/1614235293';
             }
             if (urlString != null) {
               if (await canLaunch(urlString)) {
