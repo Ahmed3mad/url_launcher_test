@@ -16,6 +16,7 @@ void main() {
             } else if (Platform.isIOS) {
               urlString = 'https://apps.apple.com/app/id/1614235293';
             }
+            print(urlString);
             if (urlString != null) {
               if (await canLaunch(urlString)) {
                 await launch(urlString);
